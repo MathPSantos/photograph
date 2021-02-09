@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { P } from '../components'
 
 export default function Home() {
   return (
@@ -7,7 +8,9 @@ export default function Home() {
         <title>SENAI 18</title>
       </Head>
 
-      <main>SENAI 18</main>
+      <main>
+        <P border="secondary">#SENAI18</P>
+      </main>
     </div>
   )
 }
