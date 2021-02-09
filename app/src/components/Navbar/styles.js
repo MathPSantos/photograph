@@ -19,8 +19,9 @@ export const Navbar = styled.header`
 Navbar.Wrapper = styled.div`
   width: 100%;
   max-width: 1160px;
+  height: ${({ burger }) => burger ? '111px' : '98px'};
 
-  padding: 20px 0;
+  padding: ${({ burger }) => burger ? '32px 0px' : '28px 0px'};
 
   position: relative;
 

@@ -1,15 +1,16 @@
 import { useState } from 'react'
+
 import { Navbar } from './styles'
 
-const NavbarComp = () => {
+const NavbarComp = ({ burger = true }) => {
   const [active, setActive] = useState(false)
 
   return (
     <Navbar>
-      <Navbar.Wrapper>
+      <Navbar.Wrapper burger={burger}>
         <Navbar.Title>#SENAI18</Navbar.Title>
                 
-        <Navbar.Burger onClick={() => setActive(!active)} active={active} />
+        {burger && <Navbar.Burger onClick={() => setActive(!active)} active={active} />}
       </Navbar.Wrapper>
 
       <Navbar.Nav active={active} >

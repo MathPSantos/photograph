@@ -9,7 +9,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <Navbar/>
+        <Navbar burger={false} />
       </main>
     </div>
   )
