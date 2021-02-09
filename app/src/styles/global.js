@@ -10,7 +10,7 @@ export default createGlobalStyle`
 
   body {
     width: 100%;
-    background-color: #FF221F;
+    background-color: ${({ theme }) => theme.colors.primary};
     color: #FFFFFF;
     font: 700 16px Ubuntu, Oxygen, sans-serif;
     transition: all 0.5s;
