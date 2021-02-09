@@ -1,0 +1,1 @@
+export { FiMove, FiX } from 'react-icons/fi'
