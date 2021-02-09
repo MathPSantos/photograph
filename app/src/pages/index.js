@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { P } from '../components'
+import { Navbar } from '../components'
 
 export default function Home() {
   return (
@@ -9,7 +9,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <P border="secondary">#SENAI18</P>
+        <Navbar/>
       </main>
     </div>
   )
