@@ -90,6 +90,7 @@ Navbar.Nav = styled.nav`
 
   background-color: ${({ theme }) => theme.colors.secondary};
 
+  transform: translateY(-100%);
   transform: ${({ active }) => active ? 'translateY(0)' : 'translateY(-100%)'};
   z-index: 1;
 
