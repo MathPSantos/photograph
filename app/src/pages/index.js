@@ -1,44 +1,15 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import Head from 'next/head'
 import { Navbar } from '../components'
 import { Landing } from '../components/Layout'
-import { AnimatePresence, motion } from 'framer-motion'
 
-const textList = [
-  { id: 1, text: "teste"},
-  { id: 2, text: "test2"},
-  { id: 3, text: "test3"},
-  { id: 4, text: "test4"},
-  { id: 5, text: "test5"},
-]
-
-const duration = 0.35
-
-const variants = {
-  initial: {
-    opacity: 0,
-  },
-  enter: {
-    opacity: 1,
-    transition: {
-      duration: duration,
-      delay: duration,
-      when: "beforeChildren",
-    },
-  },
-  exit: {
-    opacity: 0,
-    transition: { duration: duration },
-  },
-}
+import { createWordListAnimation } from '../utils/animation'
 
 // https://stackoverflow.com/questions/37713585/word-change-in-phase-css-vertical-animation-loop
 
 const Home = () => {
-  const [textIndex, setTextIndex] = useState(0)
-
   useEffect(() => {
-    setInterval(() => setTextIndex(prevTextIndex => prevTextIndex + 1), 2000)
+    createWordListAnimation(document.querySelector(".animation"), 3000 /* (ms) */);
   }, [])
 
   return (
@@ -51,104 +22,18 @@ const Home = () => {
         <Navbar burger={false} />
         <Landing>
           <Landing.Content>
-            <div style={{ display: 'flex', alignItems: 'center' }}>
-              <AnimatePresence>
-                {textList[0] === textList[textIndex] && (
-                  <motion.h1
-                    initial={{opacity: 0,}}
-                    enter={{
-                      opacity: 1,
-                      transition: {
-                        duration: duration,
-                        delay: duration,
-                        when: "beforeChildren",
-                      },
-                    }}
-                    exit={{
-                      opacity: 0,
-                      transition: { duration: duration },
-                    }}
-                  >
-                    {textList[textIndex].text}
-                  </motion.h1>
-                )}
-                {textList[1] === textList[textIndex] && (
-                  <motion.h1
-                    initial={{opacity: 0,}}
-                    enter={{
-                      opacity: 1,
-                      transition: {
-                        duration: duration,
-                        delay: duration,
-                        when: "beforeChildren",
-                      },
-                    }}
-                    exit={{
-                      opacity: 0,
-                      transition: { duration: duration },
-                    }}
-                  >
-                    {textList[textIndex].text}
-                  </motion.h1>
-                )}
-                {textList[2] === textList[textIndex] && (
-                  <motion.h1
-                    initial={{opacity: 0,}}
-                    enter={{
-                      opacity: 1,
-                      transition: {
-                        duration: duration,
-                        delay: duration,
-                        when: "beforeChildren",
-                      },
-                    }}
-                    exit={{
-                      opacity: 0,
-                      transition: { duration: duration },
-                    }}
-                  >
-                    {textList[textIndex].text}
-                  </motion.h1>
-                )}
-                {textList[3] === textList[textIndex] && (
-                  <motion.h1
-                    initial={{opacity: 0,}}
-                    enter={{
-                      opacity: 1,
-                      transition: {
-                        duration: duration,
-                        delay: duration,
-                        when: "beforeChildren",
-                      },
-                    }}
-                    exit={{
-                      opacity: 0,
-                      transition: { duration: duration },
-                    }}
-                  >
-                    {textList[textIndex].text}
-                  </motion.h1>
-                )}
-                {textList[4] === textList[textIndex] && (
-                  <motion.h1
-                    initial={{opacity: 0,}}
-                    enter={{
-                      opacity: 1,
-                      transition: {
-                        duration: duration,
-                        delay: duration,
-                        when: "beforeChildren",
-                      },
-                    }}
-                    exit={{
-                      opacity: 0,
-                      transition: { duration: duration },
-                    }}
-                  >
-                    {textList[textIndex].text}
-                  </motion.h1>
-                )}
-              </AnimatePresence>
+            <div class="animation">
+              <div class="animation-window">
+                <ul>
+                  <li>O ambiente escolar é um local interessante?</li>
+                  <li>...</li>
+                  <li>Nesse ano o SENAI Informática completa 18 anos</li>
+                  <li>Então, através desse ensaio fotográfico....</li>
+                  <li>Queremos mostrar a escola que vai além do ambiente</li>
+                  <li>Seja bem vindo!</li>
+                  <li></li>
+                </ul>
+              </div>
             </div>
           </Landing.Content>
         </Landing>

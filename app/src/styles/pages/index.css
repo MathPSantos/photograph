@@ -1,0 +1,41 @@
+.animation {
+  vertical-align: sub;
+  display: inline-block;
+  width: 544px;
+  height: 240px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+
+.animation-window {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+
+.animation ul {
+  position: relative;
+  list-style: none;
+  top: 0;
+  padding: 0;
+  margin: 0;
+  transition: top 300ms;
+}
+
+.animation li {
+  text-align: center;
+  width: 544px;
+  height: 240px;
+  line-height: 69px;
+  font: 700 60px Ubuntu, sans-serif;
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+
+.animation li + li {
+  margin-top: 320px;
+}
