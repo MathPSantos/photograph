@@ -1,16 +1,18 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import Head from 'next/head'
 import { Navbar } from '../components'
 import { Landing } from '../components/Layout'
 
 import { createWordListAnimation } from '../utils/animation'
 
-// https://stackoverflow.com/questions/37713585/word-change-in-phase-css-vertical-animation-loop
-
 const Home = () => {
+  const [hide, setHide] = useState(false)
+
   useEffect(() => {
     createWordListAnimation(document.querySelector(".animation"), 3000 /* (ms) */);
   }, [])
+
+  useEffect(() => setTimeout(() => setHide(true), 18000), [])
 
   return (
     <div>
@@ -19,11 +21,11 @@ const Home = () => {
       </Head>
 
       <>
-        <Navbar burger={false} />
-        <Landing>
+        <Navbar />
+        <Landing hide={hide}>
           <Landing.Content>
-            <div class="animation">
-              <div class="animation-window">
+            <div className="animation">
+              <div className="animation-window">
                 <ul>
                   <li>O ambiente escolar é um local interessante?</li>
                   <li>...</li>

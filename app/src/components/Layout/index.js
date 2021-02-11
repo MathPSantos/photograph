@@ -9,7 +9,12 @@ export const Landing = styled.main`
   justify-content: center;
   align-items: center;
 
+  background-color: ${({ theme }) => theme.colors.primary};
+
   padding: 0 20px;
+
+  transform: ${({ hide }) => hide ? 'translateX(-100%)' : 'translateX(0)' };
+  transition: all .6s;
 `
 
 Landing.Content = styled.div`
