@@ -38,3 +38,24 @@ Landing.AnimatedText = styled(motion.ul)`
 Landing.AnimatedTextItem = styled(motion.li)`
   font: 700 60px Ubuntu, sans-serif;
 `
+
+export const Galery = styled.main`
+  width: 100%;
+  height: ${({ photoQty }) => photoQty * 240}px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 111px 20px 0 20px;
+`
+
+Galery.Content = styled.div`
+  width: 100%;
+  max-width: 1160px;
+  height: 100%;
+
+  padding-top: 62px;
+
+  position: relative;
+`
