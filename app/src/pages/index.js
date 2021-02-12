@@ -1,18 +1,24 @@
 import { useEffect, useState } from 'react'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
+
 import { Navbar } from '../components'
 import { Landing } from '../components/Layout'
 
 import { createWordListAnimation } from '../utils/animation'
 
 const Home = () => {
+  const router = useRouter()
+
   const [hide, setHide] = useState(false)
 
   useEffect(() => {
-    createWordListAnimation(document.querySelector(".animation"), 3000 /* (ms) */);
+    createWordListAnimation(document.querySelector(".animation"), 3000 /* (ms) */)
   }, [])
 
   useEffect(() => setTimeout(() => setHide(true), 18000), [])
+
+  useEffect(() => setTimeout(() => router.push('/about'), 18600), [])
 
   return (
     <div>
