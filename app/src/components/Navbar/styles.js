@@ -60,7 +60,7 @@ Navbar.Burger = styled.div`
     content: '';
     width: 40px;
     height: 4px;
-    background-color: ${({ theme, active }) => active ? theme.colors.primary : theme.colors.secondary};
+    background-color: ${({ theme }) => theme.colors.primary};
     transition: all 0.3s linear;
     transform-origin: 1px;
   }
