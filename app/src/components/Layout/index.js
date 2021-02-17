@@ -81,7 +81,7 @@ AboutLay.Content = styled.div`
 
 AboutLay.Paragraph = styled.p`
   width: 100%;
-  max-width: 640px;
+  max-width: 700px;
 
   position: relative;
 
@@ -90,12 +90,16 @@ AboutLay.Paragraph = styled.p`
   letter-spacing: 0.05em;
   line-height: 142.3%;
 
-  padding: ${({ index }) => index % 2 ? '0 92px 0 0' : '0 0 0 92px'};
+  padding: ${({ index }) => index % 2 ? '0 20px 0 0' : '0 0 0 20px'};
   margin-left: ${({ index }) => index % 2 && 'auto'};
+
+  > div + div {
+    margin-top: 20px;
+  }
 `
 
 AboutLay.Span = styled.span`
-  font: 700 100px Ubuntu, sans-serif;
+  font: 700 92px Ubuntu, sans-serif;
   color: #FFF;
   text-shadow: -1px 0 ${({ theme }) => theme.colors.primary}, 0 1px ${({ theme }) => theme.colors.primary}, 1px 0 ${({ theme }) => theme.colors.primary}, 0 -1px ${({ theme }) => theme.colors.primary};
   text-transform: uppercase;
