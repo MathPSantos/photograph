@@ -1,31 +1,61 @@
-import { useRef } from 'react'
 import Head from 'next/head'
 
 import { Navbar } from '../components'
-import Photo from '../components/Photo'
-import { Galery } from '../components/Layout'
+import { AboutLay } from '../components/Layout'
 
-const arr = [1, 1, 1, 1, 1, 1]
+const arr = [
+    {
+
+        paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dignissim lacus rutrum rutrum lobortis. Vivamus ultrices diam sed metus fermentum, sed congue est viverra. Aliquam dapibus odio ex, non tempus magna rutrum eu. Aliquam commodo scelerisque viverra. Sed volutpat tempus aliquam. Pellentesque pretium, est eget consequat posuere, nisl turpis posuere elit, tempor aliquam lorem diam sit amet dui. Suspendisse ultrices sapien nec dolor condimentum, eget vehicula enim porttitor.",
+    },
+
+    {
+
+        paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed volutpat tempus aliquam. Pellentesque pretium, est eget consequat posuere, nisl turpis posuere elit, tempor aliquam lorem diam sit amet dui. Suspendisse ultrices sapien nec dolor condimentum, eget vehicula enim porttitor."
+    },
+    
+    {
+
+        paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dignissim lacus rutrum rutrum lobortis. Vivamus ultrices diam sed metus fermentum, sed congue est viverra. Aliquam dapibus odio ex, non tempus magna rutrum eu. Aliquam commodo scelerisque viverra. Sed volutpat tempus aliquam. Pellentesque pretium, est eget consequat posuere, nisl turpis posuere elit, tempor aliquam lorem diam sit amet dui. Suspendisse ultrices sapien nec dolor condimentum, eget vehicula enim porttitor.",
+        title: "Comunidade",
+    },     
+
+    {
+
+        paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed volutpat tempus aliquam. Pellentesque pretium, est eget consequat posuere, nisl turpis posuere elit, tempor aliquam lorem diam sit amet dui. Suspendisse ultrices sapien nec dolor condimentum, eget vehicula enim porttitor.",
+        title: "Espaço",
+    },
+
+    {
+
+        paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed volutpat tempus aliquam. Pellentesque pretium, est eget consequat posuere, nisl turpis posuere elit, tempor aliquam lorem diam sit amet dui. Suspendisse ultrices sapien nec dolor condimentum, eget vehicula enim porttitor.",
+        title: "Relações",
+    },
+]
 
 const About = () => {
-    const galeryRef = useRef(null)
-
-    return (
+    return(
         <div>
-          <Head>
-              <title>SENAI 18 - Sobre</title>
-          </Head>
+            <Head>
+                <title>SENAI 18 - Sobre</title>
+            </Head>
 
-          <>
-            <Navbar />
-            <Galery photoQty={arr.length}>
-                <Galery.Content ref={galeryRef}>
-                    {arr.map((_, i) => (
-                        <Photo index={i} animate={{ opacity: 1 }} initial={{ opacity: 0 }} transition={{ duration: 0.5 }} drag dragElastic={0.2} dragConstraints={galeryRef} />
-                    ))}
-                </Galery.Content>
-            </Galery>
-          </>
+            <>
+                <Navbar />
+                <AboutLay>
+                    <AboutLay.Content>
+                        {arr.map((e, i) => (
+                            <AboutLay.Paragraph 
+                                key={i} 
+                                index={i}
+                            >
+                                {e?.paragraph || ''}
+                                <AboutLay.Span index={i}>{e?.title || ''}</AboutLay.Span>
+                            </AboutLay.Paragraph>
+                        ))}
+                    </AboutLay.Content>
+                </AboutLay>
+            </>
         </div>
     )
 }
