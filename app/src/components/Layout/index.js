@@ -79,7 +79,7 @@ AboutLay.Content = styled.div`
   }
 `
 
-AboutLay.Paragraph = styled.p`
+AboutLay.Paragraph = styled(motion.p)`
   width: 100%;
   max-width: 700px;
 
@@ -98,7 +98,7 @@ AboutLay.Paragraph = styled.p`
   }
 `
 
-AboutLay.Span = styled.span`
+AboutLay.Span = styled(motion.span)`
   font: 700 92px Ubuntu, sans-serif;
   color: #FFF;
   text-shadow: -1px 0 ${({ theme }) => theme.colors.primary}, 0 1px ${({ theme }) => theme.colors.primary}, 1px 0 ${({ theme }) => theme.colors.primary}, 0 -1px ${({ theme }) => theme.colors.primary};

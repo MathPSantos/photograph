@@ -49,9 +49,12 @@ const About = () => {
                             <AboutLay.Paragraph 
                                 key={i} 
                                 index={i}
+                                animate={{ opacity: 1 }} 
+                                initial={{ opacity: 0 }} 
+                                transition={{ duration: 0.7 }} 
                             >
                                 {formatParagraph(e?.paragraph) || ''}
-                                <AboutLay.Span index={i}>{e?.title || ''}</AboutLay.Span>
+                                <AboutLay.Span animate={{ opacity: 1 }} initial={{ opacity: 0 }} transition={{ duration: 0.5 }} index={i}>{e?.title || ''}</AboutLay.Span>
                             </AboutLay.Paragraph>
                         ))}
                     </AboutLay.Content>
