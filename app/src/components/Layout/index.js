@@ -25,18 +25,11 @@ Landing.Content = styled.div`
   position: relative;
 `
 
-Landing.AnimatedText = styled(motion.ul)`
-  width: 544px;
-  height: 208px;
-
+Landing.Image = styled.div`
   position: absolute;
-  top: 50%;
+  top: 40px;
   left: 50%;
-  transform: translate(-50%, -50%);
-`
-
-Landing.AnimatedTextItem = styled(motion.li)`
-  font: 700 60px Ubuntu, sans-serif;
+  transform: translateX(-50%);
 `
 
 export const Galery = styled.main`

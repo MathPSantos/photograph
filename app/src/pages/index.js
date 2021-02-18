@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import Head from 'next/head'
+import Image from 'next/image'
 import { useRouter } from 'next/router'
 
 import { Navbar } from '../components'
@@ -18,7 +19,7 @@ const Home = () => {
 
   useEffect(() => setTimeout(() => setHide(true), 17000), [])
 
-  useEffect(() => setTimeout(() => router.push('/about'), 17600), [])
+  // useEffect(() => setTimeout(() => router.push('/about'), 17600), [])
 
   return (
     <div>
@@ -27,8 +28,16 @@ const Home = () => {
       </Head>
 
       <>
-        <Navbar />
         <Landing hide={hide}>
+          <Landing.Image>
+            <Image
+              src="/img/senai.png"
+              alt="SENAI"
+              width={154}
+              height={40}
+            />
+          </Landing.Image>
+
           <Landing.Content>
             <div className="animation">
               <div className="animation-window">
