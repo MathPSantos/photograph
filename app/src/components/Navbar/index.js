@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Link from 'next/link'
 
 import { Navbar } from './styles'
 
@@ -16,8 +17,13 @@ const NavbarComp = ({ burger = true }) => {
       <Navbar.Nav active={active} >
         <Navbar.NavWrapper>
           <Navbar.NavList>
-            <Navbar.NavLink>GALERIA</Navbar.NavLink>
-            <Navbar.NavLink>SOBRE</Navbar.NavLink>
+            <Link href="galery" passHref>
+              <Navbar.NavLink>GALERIA</Navbar.NavLink>
+            </Link>
+
+            <Link href="about" passHref>
+              <Navbar.NavLink>SOBRE</Navbar.NavLink>
+            </Link>
           </Navbar.NavList>
         </Navbar.NavWrapper>
       </Navbar.Nav>

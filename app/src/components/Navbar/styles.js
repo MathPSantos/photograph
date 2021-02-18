@@ -98,19 +98,6 @@ Navbar.Nav = styled.nav`
 
   transition: all .3s;
   box-shadow: 0px 0px 32px rgba(0, 0, 0, 0.25);
-
-  /* &::before {
-    content: '';
-    width: 100%;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.2);
-
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    z-index: -3;
-  } */
 `
 
 Navbar.NavWrapper = styled.div`
@@ -128,19 +115,20 @@ Navbar.NavList = styled.ul`
   flex-direction: column;
   align-items: flex-start;
 
-  > li + li {
+  > a + a {
       margin-top: 32px;
   }
 `
 
 
-Navbar.NavLink = styled.li`
+Navbar.NavLink = styled.a`
   position: relative;
 
   font: 700 80px Ubuntu, sans-serif;
   color: ${({ theme }) => theme.colors.secondary};
   text-shadow: -1px 0 ${({ theme }) => theme.colors.primary}, 0 1px ${({ theme }) => theme.colors.primary}, 1px 0 ${({ theme }) => theme.colors.primary}, 0 -1px ${({ theme }) => theme.colors.primary};
-  
+  text-decoration: none;
+
   cursor: pointer;
 
   &::before {
