@@ -16,9 +16,9 @@ const Home = () => {
     createWordListAnimation(document.querySelector(".animation"), 3000 /* (ms) */)
   }, [])
 
-  useEffect(() => setTimeout(() => setHide(true), 18000), [])
+  useEffect(() => setTimeout(() => setHide(true), 17000), [])
 
-  useEffect(() => setTimeout(() => router.push('/about'), 18600), [])
+  useEffect(() => setTimeout(() => router.push('/about'), 17600), [])
 
   return (
     <div>

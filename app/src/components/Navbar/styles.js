@@ -13,7 +13,7 @@ export const Navbar = styled.header`
   justify-content: center;
   align-items: center;
 
-  z-index: 0;
+  z-index: 3;
 `
 
 Navbar.Wrapper = styled.div`
@@ -40,6 +40,8 @@ Navbar.Title = styled.span`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  z-index: -2;
 `
 
 Navbar.Burger = styled.div`
@@ -53,7 +55,7 @@ Navbar.Burger = styled.div`
 
   cursor: pointer;
 
-  z-index: ${({ active }) => active ? 2 : 0};
+  z-index: 2;
 
   &::before,
   &::after {
@@ -92,9 +94,23 @@ Navbar.Nav = styled.nav`
 
   transform: translateY(-100%);
   transform: ${({ active }) => active ? 'translateY(0)' : 'translateY(-100%)'};
-  z-index: 1;
+  z-index: 1;  
 
   transition: all .3s;
+  box-shadow: 0px 0px 32px rgba(0, 0, 0, 0.25);
+
+  /* &::before {
+    content: '';
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.2);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    z-index: -3;
+  } */
 `
 
 Navbar.NavWrapper = styled.div`
