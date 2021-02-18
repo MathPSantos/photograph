@@ -15,8 +15,8 @@ export const H2 = styled.h2`
 `
 
 export const P = styled.p`
-  font: 700 20px Oxygen, sans-serif;
+  font: 700 16px Oxygen, sans-serif;
   color: ${({ theme }) => theme.colors.black};
-  letter-spacing: 0.05em;
+  letter-spacing: 0.07em;
   line-height: 142.3%;
 `

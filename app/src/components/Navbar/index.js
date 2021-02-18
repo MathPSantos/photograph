@@ -7,7 +7,7 @@ const NavbarComp = ({ burger = true }) => {
   const [active, setActive] = useState(false)
 
   return (
-    <Navbar>
+    <Navbar animate={{ opacity: 1 }} initial={{ opacity: 0 }} transition={{ duration: 0.5 }}>
       <Navbar.Wrapper burger={burger}>
         <Navbar.Title>#SENAI18</Navbar.Title>
                 

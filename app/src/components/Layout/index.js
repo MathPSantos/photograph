@@ -78,10 +78,10 @@ AboutLay.Paragraph = styled(motion.p)`
 
   position: relative;
 
-  font: 700 20px Oxygen, sans-serif;
+  font: 700 18px Oxygen, sans-serif;
   color: #202020;
   letter-spacing: 0.05em;
-  line-height: 142.3%;
+  line-height: 150%;
 
   padding: ${({ index }) => index % 2 ? '0 20px 0 0' : '0 0 0 20px'};
   margin-left: ${({ index }) => index % 2 && 'auto'};

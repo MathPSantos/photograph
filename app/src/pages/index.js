@@ -19,7 +19,7 @@ const Home = () => {
 
   useEffect(() => setTimeout(() => setHide(true), 17000), [])
 
-  // useEffect(() => setTimeout(() => router.push('/about'), 17600), [])
+  useEffect(() => setTimeout(() => router.push('/about'), 17600), [])
 
   return (
     <div>

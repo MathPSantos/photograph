@@ -1,6 +1,7 @@
 import styled from 'styled-components'
+import { motion } from 'framer-motion'
 
-export const Navbar = styled.header`
+export const Navbar = styled(motion.header)`
   position: fixed;
   top: 0;
   left: 0;
