@@ -1,6 +1,8 @@
+import Image from 'next/image'
 import styled, { css } from 'styled-components'
-import { FiMove } from '../../styles/icons'
 import { motion } from 'framer-motion'
+
+import { FiMove } from '../../styles/icons'
 
 export const Photo = styled(motion.div)`
   width: 415px;
@@ -17,11 +19,17 @@ export const Photo = styled(motion.div)`
       opacity: 1;
     }
   }
+
 `
 
-Photo.Image = styled.img`
+Photo.Image = styled.div`
+  position: relative;
   width: 100%;
   height: 100%;
+
+  background-image: url(${({ src }) => src});
+  background-position: center;
+  background-size: cover;
 `
 
 Photo.MoveButton = styled.div`
@@ -52,7 +60,7 @@ const iconCSS = css`
 
   color: ${({ theme }) => theme.colors.secondary};
 
-  cursor: pointer;
+  cursor: move;
   opacity: 0.95;
   transition: 0.3s all;
 

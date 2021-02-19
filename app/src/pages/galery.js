@@ -5,7 +5,16 @@ import { Navbar } from '../components'
 import Photo from '../components/Photo'
 import { Galery } from '../components/Layout'
 
-const arr = [1, 1, 1, 1, 1, 1]
+const arr = [
+    '/img/photos/photo-1.png',
+    '/img/photos/photo-2.png',
+    '/img/photos/photo-3.png',
+    '/img/photos/photo-4.png',
+    '/img/photos/photo-5.png',
+    '/img/photos/photo-6.png',
+    '/img/photos/photo-7.png',
+    '/img/photos/photo-8.png',
+]
 
 const Photos = () => {
     const galeryRef = useRef(null)
@@ -20,8 +29,18 @@ const Photos = () => {
             <Navbar />
             <Galery photoQty={arr.length}>
                 <Galery.Content ref={galeryRef}>
-                    {arr.map((_, i) => (
-                        <Photo key={i} index={i} animate={{ opacity: 1 }} initial={{ opacity: 0 }} transition={{ duration: 0.5 }} drag dragElastic={0.2} dragConstraints={galeryRef} />
+                    {arr.map((e, i) => (
+                        <Photo 
+                            src={e}
+                            key={i} 
+                            index={i} 
+                            animate={{ opacity: 1 }} 
+                            initial={{ opacity: 0 }} 
+                            transition={{ duration: 0.5 }} 
+                            drag 
+                            dragElastic={0.2} 
+                            dragConstraints={galeryRef} 
+                        />
                     ))}
                 </Galery.Content>
             </Galery>
