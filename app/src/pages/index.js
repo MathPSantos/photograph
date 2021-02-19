@@ -34,7 +34,7 @@ const Home = () => {
               src="/img/senai.png"
               alt="SENAI"
               width={154}
-              height={40}
+              height={28}
             />
           </Landing.Image>
 
