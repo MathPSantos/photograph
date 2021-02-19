@@ -22,14 +22,26 @@ export const Photo = styled(motion.div)`
 
 `
 
-Photo.Image = styled.div`
+Photo.ImageWrapper = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
 
-  background-image: url(${({ src }) => src});
-  background-position: center;
-  background-size: cover;
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    content: '';
+
+    width: 100%;
+    height: 100%
+  }
+`
+
+Photo.Image = styled(Image)`
+  width: 100%;
+  height: 100%;
 `
 
 Photo.MoveButton = styled.div`
